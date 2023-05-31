@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+
+        <TextView
+            android:id="@+id/lblTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="212dp"
+            android:fontFamily="@font/livvic_bold"
+            android:text="@string/title"
+            android:textColor="@color/sageC"
+            android:textSize="55sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etEmailLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblTitle">
+
+            <EditText
+                android:id="@+id/txtEmail"
+                android:layout_width="303dp"
+                android:layout_height="50dp"
+                android:background="@drawable/edittext_style"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                tools:layout_editor_absoluteX="54dp"
+                tools:layout_editor_absoluteY="320dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etPasswordLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/etEmailLayout"
+            app:layout_constraintTop_toBottomOf="@+id/etEmailLayout"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtPassword"
+                android:layout_width="303dp"
+                android:layout_height="50dp"
+                android:background="@drawable/edittext_style"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                tools:layout_editor_absoluteX="54dp"
+                tools:layout_editor_absoluteY="394dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etConfirmPasswordLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/etPasswordLayout"
+            app:layout_constraintTop_toBottomOf="@+id/etPasswordLayout"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtConfirmPassword"
+                android:layout_width="303dp"
+                android:layout_height="50dp"
+                android:background="@drawable/edittext_style"
+                android:hint="@string/confirmpassword"
+                android:inputType="textPassword"
+                tools:layout_editor_absoluteX="54dp"
+                tools:layout_editor_absoluteY="394dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="52dp"
+            android:background="@drawable/button_style"
+            android:text="Next"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etConfirmPasswordLayout" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="48dp"
+            android:indeterminate="true"
+            android:visibility="invisible"
+            app:indicatorColor="@color/sageC"
+            app:layout_constraintBottom_toBottomOf="@+id/etEmailLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

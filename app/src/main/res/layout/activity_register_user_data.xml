@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterUserDataActivity">
+
+    <TextView
+        android:id="@+id/lblTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="176dp"
+        android:fontFamily="@font/livvic_bold"
+        android:text="@string/title"
+        android:textColor="@color/sageC"
+        android:textSize="55sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="52dp"
+        android:background="@drawable/button_style"
+        android:text="@string/register"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etAddressLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etNameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblTitle">
+
+        <EditText
+            android:id="@+id/txtName"
+            android:layout_width="303dp"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_style"
+            android:hint="@string/name"
+            android:inputType="text"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="320dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etPhoneLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/etNameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/etNameLayout">
+
+        <EditText
+            android:id="@+id/txtPhone"
+            android:layout_width="303dp"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_style"
+            android:hint="@string/phone"
+            android:inputType="phone"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="320dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etAddressLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/etPhoneLayout"
+        app:layout_constraintTop_toBottomOf="@+id/etPhoneLayout">
+
+        <EditText
+            android:id="@+id/txtAddress"
+            android:layout_width="303dp"
+            android:layout_height="100dp"
+            android:background="@drawable/edittext_style"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/address"
+            android:inputType="textMultiLine"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="320dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressRegisterData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="40dp"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:indicatorColor="@color/sageC"
+        app:layout_constraintBottom_toBottomOf="@+id/etNameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

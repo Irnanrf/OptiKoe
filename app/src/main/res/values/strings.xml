@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">OptiKoeCapstone</string>
+    <string name="title">Optiqoe</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirmpassword">Confirm Password</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone Number</string>
+    <string name="address">Address</string>
+    <string name="addressDummy">Psr. R.E. Martadinata RT 003 RW 02 No. 190, Kendari, 83592</string>
+</resources>

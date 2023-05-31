@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1085890723144",
+    "project_id": "optiqoe",
+    "storage_bucket": "optiqoe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085890723144:android:0eeafcdb3dead13cc5877d",
+        "android_client_info": {
+          "package_name": "com.irnanrf.optikoecapstone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085890723144-90taa5i0bovq1rkun3mg4r1b2def4tco.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDikRH5ThkBM5b7bk2ClXyJJC7T6GURtaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085890723144-90taa5i0bovq1rkun3mg4r1b2def4tco.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
