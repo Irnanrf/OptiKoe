@@ -43,25 +43,54 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:paddingHorizontal="13dp"
                 android:paddingVertical="6.5dp">
 
-                <TextView
-                    android:id="@+id/tvPrice"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rp 10.000"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tvNameProduct"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nama"
-                    android:textColor="@color/black" />
+                    <TextView
+                        android:id="@+id/tvPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp 10.000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tvNameProduct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nama"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="end"
+                    android:orientation="vertical"
+                    android:padding="2dp">
+
+                    <ImageView
+                        android:id="@+id/imgFav"
+                        android:gravity="center"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/ic_baseline_favorite_border_24"
+                        tools:layout_editor_absoluteX="145dp"
+                        tools:layout_editor_absoluteY="52dp"
+                        app:tint="@color/sageC"/>
+
+                </LinearLayout>
+
+
 
                 <LinearLayout
                     android:id="@+id/ly_diskon"
@@ -146,7 +175,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="13dp"
                     android:orientation="vertical">
@@ -168,6 +197,14 @@
                         android:textColor="@color/grey" />
 
                 </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imgTry"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/tryon"
+                    app:tint="@color/sageC"/>
 
             </LinearLayout>
 
@@ -310,6 +347,7 @@
                             app:srcCompat="@drawable/plus"
                             app:tint="@color/sageC"/>
 
+
                     </LinearLayout>
 
                     <com.google.android.material.button.MaterialButton
@@ -325,6 +363,8 @@
                         app:cornerRadius="7dp"
                         tools:layout_editor_absoluteX="54dp"
                         tools:layout_editor_absoluteY="473dp" />
+
+
                 </LinearLayout>
 
             </LinearLayout>

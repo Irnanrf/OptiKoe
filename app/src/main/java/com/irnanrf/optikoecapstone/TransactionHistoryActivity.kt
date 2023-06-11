@@ -6,14 +6,18 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
+import com.google.firebase.firestore.EventListener
 import com.irnanrf.optikoecapstone.adapter.ProductAdapter
 import com.irnanrf.optikoecapstone.adapter.TransactionHistoryAdapter
 import com.irnanrf.optikoecapstone.data.DummyData
 import com.irnanrf.optikoecapstone.data.model.Product
 import com.irnanrf.optikoecapstone.data.model.TransactionHistory
 import com.irnanrf.optikoecapstone.databinding.ActivityTransactionHistoryBinding
+import java.text.SimpleDateFormat
+import java.util.*
 
 class TransactionHistoryActivity : AppCompatActivity() {
 
@@ -34,7 +38,7 @@ class TransactionHistoryActivity : AppCompatActivity() {
 
         listHistory = DummyData.listHistory.toMutableList()
         listHistory.clear()
-        //adapterTransactionHistory.addItems(listHistory)
+        adapterTransactionHistory.addItems(listHistory)
         binding.rvTransactionHistory.adapter = adapterTransactionHistory
 
         getTransactionHistory()
@@ -42,7 +46,7 @@ class TransactionHistoryActivity : AppCompatActivity() {
 
     private fun getTransactionHistory(){
         val userId = firebaseAuth.currentUser?.uid
-        firestore.collection("dataTransaction").whereEqualTo("idUser", userId)
+        firestore.collection("dataTransaction").whereEqualTo("idUser", userId).orderBy("date", Query.Direction.ASCENDING)
             .addSnapshotListener(EventListener { value, error ->
                 if (error != null) {
                     Log.e("Firestore Error", error.message!!)
@@ -66,7 +70,7 @@ class TransactionHistoryActivity : AppCompatActivity() {
 
                         productName = dc.document["productName"].toString()
                         productPrice = dc.document["productPrice"].toString()
-                        quantity = dc.document["quantity"].toString()
+                        quantity = dc.document["productQuantity"].toString()
                         shippingAddress = dc.document["shippingAddress"].toString()
                         shippingCourier = dc.document["shippingCourier"].toString()
                         shippingCost = dc.document["shippingCost"].toString()
@@ -75,7 +79,12 @@ class TransactionHistoryActivity : AppCompatActivity() {
                         totalPrice = dc.document["totalPrice"].toString()
                         paymentMethod = dc.document["paymentMethod"].toString()
                         status = dc.document["status"].toString()
-                        date = dc.document["date"].toString()
+                        val timestamp = dc.document["date"] as com.google.firebase.Timestamp
+                        val timestampdate = timestamp.toDate()
+                        val formatter = SimpleDateFormat("d MMM yyyy HH:mm")
+                        val datestr = formatter.format(timestampdate)
+                        println("Doc ID : " + dc.document.id )
+                        println("Status : " + status )
                         listHistory.add(
                             TransactionHistory(
                                 userId,
@@ -90,12 +99,13 @@ class TransactionHistoryActivity : AppCompatActivity() {
                                 totalPrice,
                                 paymentMethod,
                                 status,
-                                date,
+                                datestr,
                                 R.drawable.frame1
                             )
                         )
                     }
                     println(dc.type)
+                    adapterTransactionHistory.removeItems()
                     adapterTransactionHistory.addItems(listHistory)
 
                     if(listHistory.isEmpty()){

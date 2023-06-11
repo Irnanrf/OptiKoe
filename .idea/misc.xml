@@ -10,6 +10,7 @@
         <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/drawable/ic_camerawhite1.xml" value="0.1255" />
         <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/drawable/linear_border.xml" value="0.1255" />
         <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/drawable/searchview_style.xml" value="0.1455" />
+        <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/drawable/transparent_background.xml" value="0.1655" />
         <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/font/livvic.xml" value="0.21145833333333333" />
         <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/layout/activity_detail_product.xml" value="0.264" />
         <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/layout/activity_detail_transaction.xml" value="0.264" />
@@ -21,10 +22,15 @@
         <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/layout/activity_profile.xml" value="0.264" />
         <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/layout/activity_register_user_data.xml" value="0.259375" />
+        <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/layout/activity_scan_face.xml" value="0.2" />
         <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/layout/activity_transaction.xml" value="0.264" />
         <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/layout/activity_transaction_history.xml" value="0.264" />
+        <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/layout/activity_try_on.xml" value="0.18072916666666666" />
+        <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/layout/activity_wishlist.xml" value="0.2109375" />
         <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/layout/item_home_product.xml" value="0.264" />
         <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/layout/item_transaction_history.xml" value="0.264" />
+        <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/layout/item_wishlist_product.xml" value="0.2109375" />
+        <entry key="..\:/Users/VNX/AndroidStudioProjects/OptiKoeCapstone/app/src/main/res/menu/bottom_menu.xml" value="0.259375" />
       </map>
     </option>
   </component>

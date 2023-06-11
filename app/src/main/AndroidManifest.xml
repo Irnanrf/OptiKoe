@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.irnanrf.optikoecapstone">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +17,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OptiKoeCapstone"
         tools:targetApi="33">
+        <activity
+            android:name=".TryOnActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScanFaceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WishlistActivity"
+            android:exported="false" />
         <activity
             android:name=".TransactionActivity"
             android:exported="false" />

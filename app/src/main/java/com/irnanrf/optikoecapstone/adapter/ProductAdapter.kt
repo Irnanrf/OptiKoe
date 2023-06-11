@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.irnanrf.optikoecapstone.DetailProductActivity
 import com.irnanrf.optikoecapstone.data.model.Product
 import com.irnanrf.optikoecapstone.databinding.ItemHomeProductBinding
@@ -21,9 +22,10 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
         @SuppressLint("SetTextI18n")
         fun bind(item: Product, position: Int) {
             itemBinding.apply {
-                val harga = item.price ?: 0
                 tvName.text = item.name
-                imageView.setImageResource(item.image)
+                Glide.with(itemBinding.root)
+                    .load(item.image)
+                    .into(imageView)
                 tvHarga.text = item.price.toRupiah()
                 tvLocation.text = item.location
                 tvFaceshape.text = item.faceshape
@@ -54,6 +56,7 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
         holder.bind(data[position], position)
         holder.itemView.setOnClickListener{
             val intentDetail = Intent(holder.itemView.context, DetailProductActivity::class.java)
+            intentDetail.putExtra("product_id", data[holder.adapterPosition].id.toString())
             intentDetail.putExtra("product_name", data[holder.adapterPosition].name.toString())
             intentDetail.putExtra("product_price", data[holder.adapterPosition].price.toString())
             intentDetail.putExtra("product_desc", data[holder.adapterPosition].desc.toString())

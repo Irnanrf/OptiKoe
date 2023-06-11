@@ -27,7 +27,7 @@
                 app:tint="@color/sageC"/>
 
             <LinearLayout
-                android:layout_width="200dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 >
@@ -52,31 +52,43 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:gravity="end"
+                android:layout_marginRight="15dp">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
-                    android:id="@+id/ly_status"
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/yellow"
-                    app:cardElevation="0dp">
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
 
-                    <TextView
-                        android:id="@+id/tv_status"
+                    <com.google.android.material.card.MaterialCardView
+                        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+                        android:id="@+id/ly_status"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="4dp"
-                        android:layout_marginVertical="4dp"
-                        android:text="On Process"
-                        android:textColor="@color/red"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
+                        android:backgroundTint="@color/yellow"
+                        app:cardElevation="0dp"
+                        >
 
-                </com.google.android.material.card.MaterialCardView>
+                        <TextView
+                            android:id="@+id/tv_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="4dp"
+                            android:layout_marginVertical="4dp"
+                            android:text="null"
+                            android:textColor="@color/red"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
 
             </LinearLayout>
+
 
 
 
@@ -106,7 +118,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
                 >

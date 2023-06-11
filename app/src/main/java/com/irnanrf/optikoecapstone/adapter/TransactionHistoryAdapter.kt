@@ -2,6 +2,7 @@ package com.irnanrf.optikoecapstone.adapter
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,6 +26,10 @@ class TransactionHistoryAdapter : RecyclerView.Adapter<TransactionHistoryAdapter
             itemBinding.apply {
                 tvDate.text = item.date
                 tvStatus.text = item.status
+                if(!item.status.equals("On Process")){
+                    tvStatus.setTextColor(Color.parseColor("#52a31c"))
+                    lyStatus.background.setTint(Color.parseColor("#b1f79c"))
+                }
                 imgProduct.setImageResource(item.image)
                 tvProductName.text = item.productName
                 tvQuantity.text = "Quantity : " + item.quantity

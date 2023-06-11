@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
     android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
-    >
+    tools:context=".HomeActivity">
 
     <LinearLayout
         android:id="@+id/laySearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/sageB"
         android:orientation="vertical"
         android:padding="5dp"
-        android:background="@color/sageB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,16 +21,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginHorizontal="16dp"
             android:gravity="center"
-            android:layout_marginHorizontal="16dp">
+            android:orientation="horizontal">
 
             <SearchView
                 android:id="@+id/searchView"
                 android:layout_width="wrap_content"
                 android:layout_height="43dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/searchview_style"
                 android:iconifiedByDefault="false"
@@ -44,68 +43,73 @@
                 android:layout_height="35dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_baseline_camera_alt_24"
-                app:tint="@color/white"/>
+                app:tint="@color/white" />
 
         </LinearLayout>
-
 
 
         <LinearLayout
             android:id="@+id/layChips"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_marginHorizontal="16dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/laySearch"
->
+            app:layout_constraintTop_toBottomOf="@+id/laySearch">
 
 
             <HorizontalScrollView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
+
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/chipGroup"
                     android:layout_width="match_parent"
-                    app:singleSelection="true"
                     android:layout_height="wrap_content"
-                    >
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipTryOn"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Try-On" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chipRound"
                         style="@style/Widget.MaterialComponents.Chip.Filter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Round"/>
+                        android:text="Round" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chipOval"
                         style="@style/Widget.MaterialComponents.Chip.Filter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Oval"/>
+                        android:text="Oval" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chipSquare"
                         style="@style/Widget.MaterialComponents.Chip.Filter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Square"/>
+                        android:text="Square" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chipHeart"
                         style="@style/Widget.MaterialComponents.Chip.Filter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Heart"/>
+                        android:text="Heart" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chipRect"
                         style="@style/Widget.MaterialComponents.Chip.Filter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rectangle"/>
+                        android:text="Rectangle" />
 
                 </com.google.android.material.chip.ChipGroup>
             </HorizontalScrollView>
@@ -117,12 +121,12 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:theme="@style/Theme.OptiKoeCapstone"
         android:id="@+id/rv_product_terbaru"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="6.5dp"
         android:orientation="vertical"
+        android:theme="@style/Theme.OptiKoeCapstone"
         app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/linearBottomNav"
         app:layout_constraintEnd_toEndOf="parent"
@@ -140,11 +144,12 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="7dp"
-        android:weightSum="5"
         android:theme="@style/Theme.OptiKoeCapstone"
+        android:weightSum="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        >
 
         <LinearLayout
             android:id="@+id/linHome"
@@ -160,8 +165,7 @@
                 android:layout_height="35dp"
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/ic_homeiconwhite"
-                />
+                app:srcCompat="@drawable/ic_homeiconwhite" />
 
         </LinearLayout>
 
@@ -180,8 +184,7 @@
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/receiptwhite"
-                app:tint="@color/white"
-                />
+                app:tint="@color/white" />
 
         </LinearLayout>
 
@@ -201,7 +204,7 @@
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/ic_baseline_camera_alt_24"
-                app:tint="@color/white"/>
+                app:tint="@color/white" />
 
 
         </LinearLayout>
@@ -221,8 +224,7 @@
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/ic_baseline_favorite_24"
-                app:tint="@color/white"
-                />
+                app:tint="@color/white" />
 
         </LinearLayout>
 
@@ -241,12 +243,13 @@
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/ic_baseline_person_24"
-                app:tint="@color/white"/>
+                app:tint="@color/white" />
 
 
         </LinearLayout>
 
     </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,5 +7,5 @@ data class Product(
     val desc: String?,
     val faceshape: String?,
     val location: String?,
-    val image: Int,
+    val image: String,
 )
