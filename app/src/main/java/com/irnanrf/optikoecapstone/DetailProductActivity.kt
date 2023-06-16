@@ -196,9 +196,15 @@ class DetailProductActivity : AppCompatActivity() {
             i.putExtra("productName", binding.tvNameProduct.text.toString())
             i.putExtra("productPrice", binding.tvPrice.text.toString())
             i.putExtra("productQuantity", binding.tvQuantity.text.toString())
+            var imgPath = intent.getStringExtra("product_image").toString()
+            i.putExtra("productImage", imgPath)
             startActivity(i)
         }
 
+        binding.imgTry.setOnClickListener{
+            val i = Intent(this@DetailProductActivity, TryOnActivity::class.java)
+            startActivity(i)
+        }
 
     }
 }

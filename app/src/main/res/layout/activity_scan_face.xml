@@ -6,7 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".ScanFaceActivity">
 
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressScanFace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="331dp"
+        android:indeterminate="true"
+        android:translationZ="90dp"
+        android:visibility="visible"
+        app:indicatorColor="@color/sageC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,11 +35,9 @@
 
             <ImageView
                 android:id="@+id/imgSelected"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_width="379dp"
+                android:layout_height="450dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -37,8 +50,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginEnd="31dp"
                 android:background="@drawable/button_style"
                 android:text="Take A Photo"
                 android:textColor="@color/white"
@@ -46,12 +59,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgSelected" />
 
+
             <Button
                 android:id="@+id/btnGallery"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/button_style"
                 android:text="Select From Gallery"
                 android:textColor="@color/white"
@@ -59,15 +73,16 @@
                 app:layout_constraintStart_toEndOf="@+id/btnCamera"
                 app:layout_constraintTop_toBottomOf="@+id/imgSelected" />
 
-
             <Button
                 android:id="@+id/btnUpload"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="116dp"
+                android:layout_marginTop="84dp"
+                android:layout_marginBottom="13dp"
                 android:background="@drawable/button_style"
                 android:text="Scan Face"
                 android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/txtResult"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgSelected" />
@@ -77,28 +92,51 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginStart="166dp"
-                android:layout_marginEnd="166dp"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="27dp"
                 android:indeterminate="true"
                 android:visibility="invisible"
                 app:indicatorColor="@color/teal_700"
-                app:layout_constraintBottom_toBottomOf="@+id/imgSelected"
-                app:layout_constraintEnd_toEndOf="@+id/btnGallery"
-                app:layout_constraintStart_toStartOf="@+id/imgSelected" />
+                app:layout_constraintBottom_toBottomOf="@+id/btnCamera"
+                app:layout_constraintEnd_toEndOf="@+id/btnUpload"
+                app:layout_constraintStart_toStartOf="@+id/btnUpload" />
+
+            <TextView
+                android:id="@+id/txtResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="88dp"
+                android:fontFamily="@font/livvic_bold"
+                android:text="Result"
+                android:textColor="@color/sageC"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/txtOutput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="19dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/livvic_bold"
-                android:text="Null Output"
+                android:text="-"
                 android:textColor="@color/sageC"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnUpload" />
+                app:layout_constraintTop_toBottomOf="@+id/txtResult" />
+
+            <Button
+                android:id="@+id/btnBackToHome"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:background="@drawable/button_style"
+                android:text="Back to Home with Result"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtOutput" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

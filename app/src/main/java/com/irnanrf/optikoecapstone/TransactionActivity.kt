@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.Timestamp
@@ -46,6 +47,11 @@ class TransactionActivity : AppCompatActivity() {
 
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
     private fun setupAction(){
         binding.btnOrder.setOnClickListener{
             addTransaction()
@@ -67,6 +73,9 @@ class TransactionActivity : AppCompatActivity() {
         binding.tvTotalproduct.text = totalPrice.toString().toRupiah()
         binding.tvShippingcost.text = (10000).toRupiah()
         binding.tvTotalpayment.text = (totalPrice + 10000).toRupiah()
+        Glide.with(this)
+            .load(intent.getStringExtra("productImage").toString())
+            .into(binding.imgProduct)
 
     }
 

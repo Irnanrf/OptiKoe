@@ -44,9 +44,14 @@ class TransactionHistoryActivity : AppCompatActivity() {
         getTransactionHistory()
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
     private fun getTransactionHistory(){
         val userId = firebaseAuth.currentUser?.uid
-        firestore.collection("dataTransaction").whereEqualTo("idUser", userId).orderBy("date", Query.Direction.ASCENDING)
+        firestore.collection("dataTransaction").whereEqualTo("idUser", userId).orderBy("date", Query.Direction.DESCENDING)
             .addSnapshotListener(EventListener { value, error ->
                 if (error != null) {
                     Log.e("Firestore Error", error.message!!)

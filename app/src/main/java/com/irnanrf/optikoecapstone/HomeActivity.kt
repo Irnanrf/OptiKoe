@@ -1,10 +1,14 @@
 package com.irnanrf.optikoecapstone
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.widget.SearchView
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentChange
@@ -15,6 +19,7 @@ import com.irnanrf.optikoecapstone.data.DummyData.listProduct
 import com.irnanrf.optikoecapstone.data.model.Product
 import com.irnanrf.optikoecapstone.data.model.TransactionHistory
 import com.irnanrf.optikoecapstone.databinding.ActivityHomeBinding
+import java.io.File
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -60,8 +65,6 @@ class HomeActivity : AppCompatActivity() {
         Log.d("Time", current)
 
         setupAction()
-
-
     }
 
     override fun onBackPressed() {
@@ -94,9 +97,55 @@ class HomeActivity : AppCompatActivity() {
             startActivity(i)
         }
 
+        val launchScanFace = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) {result ->
+            if (result.resultCode == RESULT_OK) {
+                var faceShape = result.data?.extras?.getString("ActivityResult").toString()
+                if(faceShape.equals("Oval")){
+                    binding.chipOval.isChecked = true
+                } else if(faceShape.equals("Round")){
+                    binding.chipRound.isChecked = true
+                } else if(faceShape.equals("Square")){
+                    binding.chipSquare.isChecked = true
+                }else if(faceShape.equals("Heart")){
+                    binding.chipHeart.isChecked = true
+                }else if(faceShape.equals("Rectangle")){
+                    binding.chipRect.isChecked = true
+                }
+
+                //filter by chips
+                var valueChip = ""
+                if(binding.chipRound.isChecked){
+                    valueChip = "Round"
+                    Toast.makeText(applicationContext, "Filtering by Round FaceShape", Toast.LENGTH_SHORT).show()
+                } else if(binding.chipOval.isChecked){
+                    valueChip = "Oval"
+                    Toast.makeText(applicationContext, "Filtering by Oval FaceShape", Toast.LENGTH_SHORT).show()
+                } else if(binding.chipSquare.isChecked){
+                    valueChip = "Square"
+                    Toast.makeText(applicationContext, "Filtering by Square FaceShape", Toast.LENGTH_SHORT).show()
+                } else if(binding.chipHeart.isChecked){
+                    valueChip = "Heart"
+                    Toast.makeText(applicationContext, "Filtering by Heart FaceShape", Toast.LENGTH_SHORT).show()
+                } else if(binding.chipRect.isChecked){
+                    valueChip = "Rectangle"
+                    Toast.makeText(applicationContext, "Filtering by Rectangle FaceShape", Toast.LENGTH_SHORT).show()
+                }else if(binding.chipTryOn.isChecked){
+                    valueChip = "Try-On"
+                }
+                filterByChips(valueChip)
+            }
+        }
+
         binding.linCamera.setOnClickListener {
-            val i = Intent(applicationContext, ScanFaceActivity::class.java)
-            startActivity(i)
+            val intent = Intent(applicationContext, ScanFaceActivity::class.java)
+            launchScanFace.launch(intent)
+        }
+
+        binding.imgScan2.setOnClickListener {
+            val intent = Intent(applicationContext, ScanFaceActivity::class.java)
+            launchScanFace.launch(intent)
         }
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{

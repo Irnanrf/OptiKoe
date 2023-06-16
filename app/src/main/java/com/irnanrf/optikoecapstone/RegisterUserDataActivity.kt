@@ -22,6 +22,7 @@ class RegisterUserDataActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterUserDataBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
         setupAction()
     }
